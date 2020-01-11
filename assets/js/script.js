@@ -19,14 +19,16 @@ function searchCity (cityArg) {
     }).then(function(response){
         console.log(response);
         let resName = response.name;
-        let resTemp = response.main.temp;
+        let resTempKelv = response.main.temp;
         let resHumi = response.main.humidity;
         let resWind = response.wind.speed;
         let iconCode= response.weather[0].icon;
         console.log(iconCode);
+        let resTempFar = ((resTempKelv - 273.15) * 1.80) + 32;
+        resTempFar = Math.floor(resTempFar);
         var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
         
-        setTodayInfo(resName, resTemp, resHumi, resWind, iconUrl);
+        setTodayInfo(resName, resTempFar, resHumi, resWind, iconUrl);
     })
 
     $.ajax({
