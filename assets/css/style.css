@@ -1,0 +1,26 @@
+#nav-text {
+    text-emphasis: center;
+    font-size: 40px;
+}
+#custom-icon {
+    color: blue;
+    font-size: 18px;
+}
+#search-section {
+    background-color: lightgray;
+    height: 550px;
+    margin-right: 10px;
+}
+.city-history {
+    border: solid 1px darkgray;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 0px;
+}
+.col-md {
+    width: auto;
+    padding: 0px;
+    margin-top: 50px;
+}
