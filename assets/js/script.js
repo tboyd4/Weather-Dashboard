@@ -18,6 +18,12 @@ function searchCity (cityArg) {
         method: "GET"
     }).then(function(response){
         console.log(response);
+        let resName = response.name;
+        let resTemp = response.main.temp;
+        let resHumi = response.main.humidity;
+        let resWind = response.wind.speed;
+        
+        setTodayInfo(resName, resTemp, resHumi, resWind);
     })
 
     $.ajax({
@@ -26,8 +32,16 @@ function searchCity (cityArg) {
     }).then(function(response){
         console.log(response);
     })
+}
 
+// function to set response to html elements
 
+function setTodayInfo (city, temp, humi, wind) {
+    let todate = moment().format("LL");
+    $("#city-name").text(city + " (" + todate + ") " + "-cloudicon-");
+    $("#temp").text("Temperature: " + temp);
+    $("#humi").text("Humidity: " + humi);
+    $("#wind").text("Wind Speed: " + wind + " MPH");
 }
 
 // event listener for the search click specifically
