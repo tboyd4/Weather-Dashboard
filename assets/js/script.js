@@ -22,8 +22,11 @@ function searchCity (cityArg) {
         let resTemp = response.main.temp;
         let resHumi = response.main.humidity;
         let resWind = response.wind.speed;
+        let iconCode= response.weather[0].icon;
+        console.log(iconCode);
+        var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
         
-        setTodayInfo(resName, resTemp, resHumi, resWind);
+        setTodayInfo(resName, resTemp, resHumi, resWind, iconUrl);
     })
 
     $.ajax({
@@ -36,12 +39,13 @@ function searchCity (cityArg) {
 
 // function to set response to html elements
 
-function setTodayInfo (city, temp, humi, wind) {
+function setTodayInfo (city, temp, humi, wind, icon) {
     let todate = moment().format("LL");
-    $("#city-name").text(city + " (" + todate + ") " + "-cloudicon-");
+    $("#city-name").text(city + " (" + todate + ")");
     $("#temp").text("Temperature: " + temp);
     $("#humi").text("Humidity: " + humi);
     $("#wind").text("Wind Speed: " + wind + " MPH");
+    $("#wicon").attr("src", icon);
 }
 
 // event listener for the search click specifically
