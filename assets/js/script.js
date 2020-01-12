@@ -82,7 +82,18 @@ function setSearch () {
 // event listener for the search click specifically
 
 $("#search-click").on("click", function() {
+    console.log("i am search button click")
     let searchingCity = $("#search-input").val();
     searchCity(searchingCity);
     setSearch();
 })
+
+// event listener for history buttons
+
+$(document).on("click", ".city-history", function() {
+    console.log("i am button click");
+    let getArgument = $(this).attr("data-city-name");
+    console.log(getArgument + "BOOP BEEP");
+    searchCity(getArgument);
+})
+
