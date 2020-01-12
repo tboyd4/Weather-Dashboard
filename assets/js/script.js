@@ -108,6 +108,17 @@ function setTodayInfo (city, temp, humi, wind, icon) {
 
 function setUV (uv) {
     $("#uv").text("UV Index: " + uv);
+    if (uv >= 0 && uv <= 2) {
+        $("#uv").attr("class", "green");
+    } else if (uv > 2 && uv <= 5) {
+        $("#uv").attr("class", "yellow");
+    } else if (uv >= 6 && uv <= 7) {
+        $("#uv").attr("class", "orange");
+    } else if (uv >= 8 && uv <= 10) {
+        $("#uv").attr("class", "red");
+    } else if (uv >= 11) {
+        $("#uv").attr("class", "purple");
+    }
 }
 
 // function to set 5 Day Forecast
