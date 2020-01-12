@@ -36,9 +36,9 @@ function searchCity (cityArg) {
         $.ajax({
             url: queryURLuv,
             method: "GET"
-        }).then(function(response) {
-            console.log(response);
-            let resUV = response.value;
+        }).then(function(response2) {
+            console.log(response2);
+            let resUV = response2.value;
             setUV(resUV);
         })
         
@@ -48,8 +48,8 @@ function searchCity (cityArg) {
     $.ajax({
         url: queryURLFive,
         method: "GET"
-    }).then(function(response){
-        console.log(response);
+    }).then(function(response1){
+        console.log(response1);
     })
 }
 
