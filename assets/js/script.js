@@ -146,6 +146,7 @@ $("#search-click").on("click", function() {
     let searchingCity = $("#search-input").val();
     searchCity(searchingCity);
     setSearch();
+    $("#search-input").val("City Name...")
 })
 
 // event listener for history buttons
@@ -153,7 +154,7 @@ $("#search-click").on("click", function() {
 $(document).on("click", ".city-history", function() {
     console.log("i am button click");
     let getArgument = $(this).attr("data-city-name");
-    console.log(getArgument + "BOOP BEEP");
+    console.log(getArgument);
     searchCity(getArgument);
 })
 
