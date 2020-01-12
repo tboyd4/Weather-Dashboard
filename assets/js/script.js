@@ -70,9 +70,19 @@ function setUV (uv) {
     $("#uv").text("UV Index: " + uv);
 }
 
+// function to create buttons (search history)
+
+function setSearch () {
+    let newButton = $("<button>").text($("#search-input").val());
+    newButton.attr("data-city-name", newButton.text());
+    newButton.addClass("city-history");
+    $("#search-history").prepend(newButton);
+}
+
 // event listener for the search click specifically
 
 $("#search-click").on("click", function() {
     let searchingCity = $("#search-input").val();
     searchCity(searchingCity);
+    setSearch();
 })
