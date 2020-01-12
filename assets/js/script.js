@@ -146,7 +146,7 @@ $("#search-click").on("click", function() {
     let searchingCity = $("#search-input").val();
     searchCity(searchingCity);
     setSearch();
-    $("#search-input").val("City Name...")
+    $("#search-input").val("")
 })
 
 // event listener for history buttons
