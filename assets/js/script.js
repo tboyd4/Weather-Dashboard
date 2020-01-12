@@ -50,6 +50,46 @@ function searchCity (cityArg) {
         method: "GET"
     }).then(function(response1){
         console.log(response1);
+        // day 1
+        let day1 = response1.list[0].dt_txt;
+        let iconCode1 = response1.list[0].weather[0].icon;
+        let tempKel1 = response1.list[0].main.temp;
+        let temp1 = Math.floor(((tempKel1 - 273.15) * 1.80) + 32);
+        let humi1 = response1.list[0].main.humidity;
+        var iconUrl1 = "http://openweathermap.org/img/w/" + iconCode1 + ".png";
+        setForecast ("1", day1, iconUrl1, temp1, humi1)
+        // day 2
+        let day2 = response1.list[6].dt_txt;
+        let iconCode2 = response1.list[6].weather[0].icon;
+        let tempKel2 = response1.list[6].main.temp;
+        let temp2 = Math.floor(((tempKel2 - 273.15) * 1.80) + 32);
+        let humi2 = response1.list[6].main.humidity;
+        var iconUrl2 = "http://openweathermap.org/img/w/" + iconCode2 + ".png";
+        setForecast ("2", day2, iconUrl2, temp2, humi2)
+        // day 3
+        let day3 = response1.list[14].dt_txt;
+        let iconCode3 = response1.list[14].weather[0].icon;
+        let tempKel3 = response1.list[14].main.temp;
+        let temp3 = Math.floor(((tempKel3 - 273.15) * 1.80) + 32);
+        let humi3 = response1.list[14].main.humidity;
+        var iconUrl3 = "http://openweathermap.org/img/w/" + iconCode3 + ".png";
+        setForecast ("3", day3, iconUrl3, temp3, humi3)
+        // day 4
+        let day4 = response1.list[22].dt_txt;
+        let iconCode4 = response1.list[22].weather[0].icon;
+        let tempKel4 = response1.list[22].main.temp;
+        let temp4 = Math.floor(((tempKel4 - 273.15) * 1.80) + 32);
+        let humi4 = response1.list[22].main.humidity;
+        var iconUrl4 = "http://openweathermap.org/img/w/" + iconCode4 + ".png";
+        setForecast ("4", day4, iconUrl4, temp4, humi4)
+        // day 5
+        let day5 = response1.list[30].dt_txt;
+        let iconCode5 = response1.list[30].weather[0].icon;
+        let tempKel5 = response1.list[30].main.temp;
+        let temp5 = Math.floor(((tempKel5 - 273.15) * 1.80) + 32);
+        let humi5 = response1.list[30].main.humidity;
+        var iconUrl5 = "http://openweathermap.org/img/w/" + iconCode5 + ".png";
+        setForecast ("5", day5, iconUrl5, temp5, humi5)
     })
 }
 
@@ -68,6 +108,15 @@ function setTodayInfo (city, temp, humi, wind, icon) {
 
 function setUV (uv) {
     $("#uv").text("UV Index: " + uv);
+}
+
+// function to set 5 Day Forecast
+
+function setForecast (day, date, icon, temp, humi) {
+    $("#day-"+day).text(date.slice(0, 10));
+    $("#temp"+day).text("Temperature: " + temp);
+    $("#wicon"+day).attr("src", icon);
+    $("#humi"+day).text("Humidity: " + humi);
 }
 
 // function to create buttons (search history)

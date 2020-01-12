@@ -24,3 +24,9 @@
     padding: 0px;
     margin-top: 50px;
 }
+#forecast-text {
+    margin-top: 15px;
+}
+#fiveday-text {
+    margin-top: -30px;
+}
