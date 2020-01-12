@@ -24,14 +24,14 @@ function searchCity (cityArg) {
         console.log(iconCode);
         let resTempFar = ((resTempKelv - 273.15) * 1.80) + 32;
         resTempFar = Math.floor(resTempFar);
-        var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+        var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
 
         // nested ajax call to get uv
 
         currentLon = response.coord.lon;
         currentLat = response.coord.lat;
 
-        var queryURLuv = "http://api.openweathermap.org/data/2.5/uvi?appid=f41a04a3ef06b441d0a448b858a97ca4&lat=" + currentLat + "&lon=" + currentLon;
+        var queryURLuv = "https://api.openweathermap.org/data/2.5/uvi?appid=f41a04a3ef06b441d0a448b858a97ca4&lat=" + currentLat + "&lon=" + currentLon;
 
         $.ajax({
             url: queryURLuv,
@@ -108,6 +108,7 @@ function setTodayInfo (city, temp, humi, wind, icon) {
 
 function setUV (uv) {
     $("#uv").text("UV Index: " + uv);
+    console.log(uv);
     if (uv >= 0 && uv <= 2) {
         $("#uv").attr("class", "green");
     } else if (uv > 2 && uv <= 5) {
