@@ -56,7 +56,7 @@ function searchCity (cityArg) {
         let tempKel1 = response1.list[0].main.temp;
         let temp1 = Math.floor(((tempKel1 - 273.15) * 1.80) + 32);
         let humi1 = response1.list[0].main.humidity;
-        var iconUrl1 = "http://openweathermap.org/img/w/" + iconCode1 + ".png";
+        var iconUrl1 = "https://openweathermap.org/img/w/" + iconCode1 + ".png";
         setForecast ("1", day1, iconUrl1, temp1, humi1)
         // day 2
         let day2 = response1.list[6].dt_txt;
@@ -64,7 +64,7 @@ function searchCity (cityArg) {
         let tempKel2 = response1.list[6].main.temp;
         let temp2 = Math.floor(((tempKel2 - 273.15) * 1.80) + 32);
         let humi2 = response1.list[6].main.humidity;
-        var iconUrl2 = "http://openweathermap.org/img/w/" + iconCode2 + ".png";
+        var iconUrl2 = "https://openweathermap.org/img/w/" + iconCode2 + ".png";
         setForecast ("2", day2, iconUrl2, temp2, humi2)
         // day 3
         let day3 = response1.list[14].dt_txt;
@@ -72,7 +72,7 @@ function searchCity (cityArg) {
         let tempKel3 = response1.list[14].main.temp;
         let temp3 = Math.floor(((tempKel3 - 273.15) * 1.80) + 32);
         let humi3 = response1.list[14].main.humidity;
-        var iconUrl3 = "http://openweathermap.org/img/w/" + iconCode3 + ".png";
+        var iconUrl3 = "https://openweathermap.org/img/w/" + iconCode3 + ".png";
         setForecast ("3", day3, iconUrl3, temp3, humi3)
         // day 4
         let day4 = response1.list[22].dt_txt;
@@ -80,7 +80,7 @@ function searchCity (cityArg) {
         let tempKel4 = response1.list[22].main.temp;
         let temp4 = Math.floor(((tempKel4 - 273.15) * 1.80) + 32);
         let humi4 = response1.list[22].main.humidity;
-        var iconUrl4 = "http://openweathermap.org/img/w/" + iconCode4 + ".png";
+        var iconUrl4 = "https://openweathermap.org/img/w/" + iconCode4 + ".png";
         setForecast ("4", day4, iconUrl4, temp4, humi4)
         // day 5
         let day5 = response1.list[30].dt_txt;
@@ -88,7 +88,7 @@ function searchCity (cityArg) {
         let tempKel5 = response1.list[30].main.temp;
         let temp5 = Math.floor(((tempKel5 - 273.15) * 1.80) + 32);
         let humi5 = response1.list[30].main.humidity;
-        var iconUrl5 = "http://openweathermap.org/img/w/" + iconCode5 + ".png";
+        var iconUrl5 = "https://openweathermap.org/img/w/" + iconCode5 + ".png";
         setForecast ("5", day5, iconUrl5, temp5, humi5)
     })
 }
