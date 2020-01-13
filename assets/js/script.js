@@ -58,6 +58,7 @@ function searchCity(cityArg) {
     console.log(response1);
     let dayArray = ["1", "2", "3", "4", "5"];
 
+    // first the app will need to go through the massive data returned by the forecast call
     let dataParse = response1.list;
     let dataFinish = [];
 
@@ -66,6 +67,8 @@ function searchCity(cityArg) {
         dataFinish.push(dataParse[j]);
       }
     }
+
+    // now that I have an array of length 5 thats just the five days I want, i can use that new array to grab the info
     for (var i = 0; i < dayArray.length; i++) {
       let currentDay = dayArray[i];
 
