@@ -58,37 +58,24 @@ function searchCity(cityArg) {
     console.log(response1);
     let dayArray = ["1", "2", "3", "4", "5"];
 
-
     let dataParse = response1.list;
     let dataFinish = [];
 
     for (var j = 0; j < dataParse.length; j++) {
-        if (dataParse[j].dt_txt.slice(11, 19) === "15:00:00") {
-
-            dataFinish.push(dataParse[j]);
-        }
-
-
+      if (dataParse[j].dt_txt.slice(11, 19) === "15:00:00") {
+        dataFinish.push(dataParse[j]);
+      }
     }
-    console.log(dataParse[0].dt_txt.slice(11, 19));
-    console.log(typeof dataParse[0].dt_txt.slice(11, 19));
-    console.log(dataFinish);
-
     for (var i = 0; i < dayArray.length; i++) {
+      let currentDay = dayArray[i];
 
-     
-
-
-        let currentDay = dayArray[i];
-
-        let day1 = response1.list[0].dt_txt;
-        let iconCode1 = response1.list[0].weather[0].icon;
-        let tempKel1 = response1.list[0].main.temp;
-        let temp1 = Math.floor((tempKel1 - 273.15) * 1.8 + 32);
-        let humi1 = response1.list[0].main.humidity;
-        var iconUrl1 = "https://openweathermap.org/img/w/" + iconCode1 + ".png";
-        setForecast(currentDay, day1, iconUrl1, temp1, humi1);
-      
+      let day1 = dataFinish[i].dt_txt.slice(0, 10);
+      let iconCode1 = dataFinish[i].weather[0].icon;
+      let tempKel1 = dataFinish[i].main.temp;
+      let temp1 = Math.floor((tempKel1 - 273.15) * 1.8 + 32);
+      let humi1 = dataFinish[i].main.humidity;
+      var iconUrl1 = "https://openweathermap.org/img/w/" + iconCode1 + ".png";
+      setForecast(currentDay, day1, iconUrl1, temp1, humi1);
     }
   });
 }
